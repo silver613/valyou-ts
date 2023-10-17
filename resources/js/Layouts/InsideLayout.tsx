@@ -4,12 +4,13 @@ import InsideHeader from './inside/InsideHeader';
 
 interface LayoutProps {
   children: ReactNode;
+  activeTab: string;
 }
 
-export default function InsideLayout({ children }: LayoutProps) {
+export default function InsideLayout({ children, activeTab }: LayoutProps) {
   return (
     <>
-      <InsideHeader activeTab="Bank" />
+      <InsideHeader activeTab={activeTab} />
       <Container maxWidth="xl">{children}</Container>
     </>
   );

@@ -23,8 +23,8 @@ interface Props {
 //   'Store',
 const tabs = [
   { link: '/bank', title: 'Bank' },
-  { link: '/bank', title: 'Market' },
-  { link: '/bank', title: 'Social Media' },
+  { link: '/market', title: 'Market' },
+  { link: '/socialmedia', title: 'Social Media' },
   { link: '/bank', title: 'Watch & Earn' },
   { link: '/bank', title: 'Listen & Earn' },
   { link: '/bank', title: 'Store' },

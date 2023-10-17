@@ -6,6 +6,8 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import PersoanlAccount from '@/Components/bank/PersonalAccount';
+import Funding from '@/Components/bank/Funding';
+import Investment from '@/Components/bank/Investment';
 
 export default function Bank() {
   const [value, setValue] = React.useState('account');
@@ -16,7 +18,7 @@ export default function Bank() {
 
   return (
     <>
-      <InsideLayout>
+      <InsideLayout activeTab="Bank">
         <Box marginTop={'40px'}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -30,9 +32,15 @@ export default function Bank() {
             <TabPanel value="account">
               <PersoanlAccount />
             </TabPanel>
-            <TabPanel value="funding">Item Two</TabPanel>
-            <TabPanel value="investment">Item Three</TabPanel>
-            <TabPanel value="business">Item Four</TabPanel>
+            <TabPanel value="funding">
+              <Funding />
+            </TabPanel>
+            <TabPanel value="investment">
+              <Investment />
+            </TabPanel>
+            <TabPanel value="business">
+              <Funding />
+            </TabPanel>
           </TabContext>
         </Box>
       </InsideLayout>

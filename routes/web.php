@@ -24,4 +24,12 @@ Route::get('/bank', function () {
   return Inertia::render('Bank');
 });
 
+Route::get('/market', function () {
+  return Inertia::render('Market');
+});
+
+Route::get('/socialmedia', function () {
+  return Inertia::render('SocialMedia');
+});
+
 require __DIR__.'/auth.php';
