@@ -25,9 +25,9 @@ const tabs = [
   { link: '/bank', title: 'Bank' },
   { link: '/market', title: 'Market' },
   { link: '/socialmedia', title: 'Social Media' },
-  { link: '/bank', title: 'Watch & Earn' },
-  { link: '/bank', title: 'Listen & Earn' },
-  { link: '/bank', title: 'Store' },
+  { link: '/watch_earn', title: 'Watch & Earn' },
+  { link: '/listen_earn', title: 'Listen & Earn' },
+  { link: '/store', title: 'Store' },
 ];
 
 export default function InsideHeader({ activeTab = 'Bank' }: Props) {

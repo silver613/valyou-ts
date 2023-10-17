@@ -32,4 +32,8 @@ Route::get('/socialmedia', function () {
   return Inertia::render('SocialMedia');
 });
 
+Route::get('/watch_earn', function () {
+  return Inertia::render('WatchEarn');
+});
+
 require __DIR__.'/auth.php';

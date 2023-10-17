@@ -2,14 +2,13 @@ import { Avatar, Button, Card, Chip } from '@mui/material';
 import SlideshowIcon from '@mui/icons-material/Slideshow';
 import CommentIcon from '../icons/CommentIcon';
 import PromoteIcon from '../icons/PromoteIcon';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
+import { ScrollContainer } from 'react-indiana-drag-scroll';
+import 'react-indiana-drag-scroll/dist/style.css';
+import CryptoItem from './CryptoItem';
 
 export default function DetailCard() {
   return (
-    <Card className="p-2 my-4">
+    <div className="p-2 my-4 box-shadow rounded">
       <Card className="flex items-center px-2 py-4">
         <Avatar
           src="/image/sampleAvatar.jpg"
@@ -63,20 +62,61 @@ export default function DetailCard() {
         </div>
       </div>
 
-      <Card className="px-2 py-4 flex">
-        <Avatar src="/image/sampleAvatar.jpg" />
-        <Swiper>
-          <SwiperSlide>
-            <p className="font-bold">Drake-</p>
+      <Card className="px-2 py-6 flex my-8">
+        <Avatar src="/image/sampleAvatar.jpg" className="mr-2" />
+
+        <ScrollContainer>
+          <div className="flex w-fit gap-2 whitespace-nowrap items-center">
+            <p className="font-bold">Drake -</p>
             <div className="border border-gray-300 rounded-full px-2 py-1">
               <p className="color-primary font-semibold">
                 Stock Price{' '}
                 <span className="color-primary font-bold">$78.44 VXD</span>
               </p>
             </div>
-          </SwiperSlide>
-        </Swiper>
+            <img
+              className="block w-4"
+              src="/image/song-title.png"
+              alt="song-title"
+            />
+            <div className="flex gap-2">
+              <p className="text-gray-400">
+                Song Title :
+                <span className="font-bold"> Started From The Bottom</span>
+              </p>
+              <span className="text-gray-300">
+                Song Valyou :
+                <span className="font-bold px-1">$1,000,000,24,567</span>
+              </span>
+              <span className="text-gray-300">
+                Artist Brand Listing Category :
+                <span className="font-bold">Upcoming Artist / Rapper</span>
+              </span>
+            </div>
+          </div>
+        </ScrollContainer>
       </Card>
-    </Card>
+
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold">
+          Drake's Brand Sponsors in{' '}
+          <a href="#" className="color-primary">
+            Yau Tsim Mong City
+          </a>
+        </p>
+        <a href="#" className="color-primary text-xs">
+          Bid Now (See All)
+        </a>
+      </div>
+
+      <ScrollContainer>
+        <div className="w-fit flex my-2">
+          <CryptoItem />
+          <CryptoItem isGreen={true} />
+          <CryptoItem />
+          <CryptoItem />
+        </div>
+      </ScrollContainer>
+    </div>
   );
 }
