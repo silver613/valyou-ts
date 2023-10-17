@@ -20,4 +20,8 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
+Route::get('/bank', function () {
+  return Inertia::render('Bank');
+});
+
 require __DIR__.'/auth.php';

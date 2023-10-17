@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import MainHeader from '@/Components/main/Header';
+import MainHeader from '@/Layouts/main/Header';
 import ScrollText from '@/Components/ScrollText';
 import { Container } from '@mui/material';
-import MainFooter from '@/Components/main/Footer';
+import MainFooter from '@/Layouts/main/Footer';
 
 interface LayoutProps {
   children: ReactNode;

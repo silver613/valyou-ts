@@ -11,6 +11,10 @@ body {
   color: #050f3f;
 }
 
+[type='text']:focus {
+  box-shadow: none !important;
+}
+
 .music {
   border: 2px solid #efeef3;
   border-radius: 0.2rem;
@@ -59,4 +63,8 @@ body {
   transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   font-size: 1.5rem;
   color: #fff;
+}
+
+.color-primary {
+  color: #ff0093;
 }
