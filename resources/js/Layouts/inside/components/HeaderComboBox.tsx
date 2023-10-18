@@ -22,6 +22,7 @@ export default function HeaderComboBox() {
                 <SearchIcon />
               </InputAdornment>
             ),
+            sx: { borderRadius: '50px' },
           }}
         />
       )}

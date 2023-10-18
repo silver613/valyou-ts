@@ -36,4 +36,32 @@ Route::get('/watch_earn', function () {
   return Inertia::render('WatchEarn');
 });
 
+Route::get('/listen_earn', function () {
+  return Inertia::render('ListenEarn');
+});
+
+Route::get('/store', function () {
+  return Inertia::render('Store');
+});
+
+Route::get('/video_detail', function () {
+  return Inertia::render('VideoDetail');
+});
+
+Route::get('/audio_detail', function () {
+  return Inertia::render('AudioDetail');
+});
+
+Route::get('/pricing', function () {
+  return Inertia::render('Pricing');
+});
+
+Route::get('/signin', function () {
+  return Inertia::render('Signin');
+});
+
+Route::get('/signup', function () {
+  return Inertia::render('Signup');
+});
+
 require __DIR__.'/auth.php';

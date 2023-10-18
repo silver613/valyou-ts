@@ -12,7 +12,7 @@ export default function MainLayout({ children }: LayoutProps) {
   return (
     <>
       <MainHeader />
-      {/* <ScrollText /> */}
+      <ScrollText />
       <Container maxWidth="xl">{children}</Container>
       <MainFooter />
     </>

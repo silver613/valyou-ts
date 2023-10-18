@@ -1,64 +1,50 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 
 interface Props {
   isOpen: boolean;
+  sendOpenStatus: (data: boolean) => void;
 }
 
-export default function MainDrawer({ isOpen = false }: Props) {
-  const toggleDrawer =
-    (anchor: "left", open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-    };
-
+export default function MainDrawer({ isOpen = false, sendOpenStatus }: Props) {
   return (
     <Drawer
-      anchor={"left"}
+      anchor={'left'}
       open={isOpen}
-      // onClose={toggleDrawer(false)}
+      onClick={() => sendOpenStatus(!isOpen)}
     >
-      <Box>
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+      <Box className="p-4 w-72">
+        <img
+          src="/image/logo_black.svg"
+          alt="drawer_logo"
+          style={{ width: '70%' }}
+        />
+        <List className="mt-6">
+          <ListItemButton>
+            <a href="/" className="text-lg font-bold">
+              Home
+            </a>
+          </ListItemButton>
+          <ListItemButton>
+            <a href="/market" className="text-lg font-bold">
+              Market
+            </a>
+          </ListItemButton>
+          <ListItemButton>
+            <a href="/pricing" className="text-lg font-bold">
+              Token Presale
+            </a>
+          </ListItemButton>
+          <ListItemButton>
+            <a href="/login" className="text-lg font-bold">
+              Login / Sign up
+            </a>
+          </ListItemButton>
         </List>
       </Box>
     </Drawer>

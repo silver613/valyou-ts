@@ -6,7 +6,7 @@ export default function VideoCard({
   imageURL = 'drake-gods-plan.webp',
 }: Props) {
   return (
-    <div className="flex box-shadow-thin p-1">
+    <a className="flex box-shadow-thin p-1" href="/video_detail">
       <img
         className="block w-[150px] object-cover"
         src={`/image/${imageURL}`}
@@ -22,6 +22,6 @@ export default function VideoCard({
           <span className="font-semibold text-xs">$78.44 VXD</span> - 10.77%
         </a>
       </div>
-    </div>
+    </a>
   );
 }

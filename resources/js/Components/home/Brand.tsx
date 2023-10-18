@@ -1,7 +1,18 @@
 import { Box, Typography } from '@mui/material';
 
 export default function Brand() {
-  const tempArr: any[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const tempArr: any[] = [
+    { title: 'Alibaba Group Award Winner', image: 'alibaba.png' },
+    { title: 'Official Cloud Service Partner', image: 'alibabacloud_icon.svg' },
+    { title: 'People Choice Award', image: 'download.png' },
+    { title: 'Wildcard Finalist', image: 'download (1).png' },
+    { title: 'As Seen On Inflight entertainment', image: 'download (2).png' },
+    { title: 'Top 20 Global Finalist / 700', image: 'download (3).png' },
+    { title: 'As seen at Midem France', image: 'download (4).png' },
+    { title: 'Trade Award Winner', image: 'download (5).png' },
+    { title: 'Award Winner', image: 'download (6).png' },
+    { title: '', image: 'fintech_logo.webp' },
+  ];
 
   return (
     <>
@@ -17,11 +28,13 @@ export default function Brand() {
             sx={{ width: 'calc(100% / 5 - 15px)' }}
           >
             <Box className="w-3/5 mx-auto mb-2">
-              <img src="/image/alibaba.png" alt="alibaba" />
+              <img
+                className="block mx-auto h-[90px]"
+                src={`/image/${item.image}`}
+                alt="alibaba"
+              />
             </Box>
-            <p className="text-xs font-extralight">
-              Alibaba Group Award Winner
-            </p>
+            <p className="text-xs font-extralight">{item.title}</p>
           </Box>
         ))}
       </Box>

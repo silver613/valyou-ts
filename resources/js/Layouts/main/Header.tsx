@@ -11,7 +11,7 @@ export default function MainHeader() {
 
   return (
     <>
-      <MainDrawer isOpen={isDrawerOpen} />
+      <MainDrawer isOpen={isDrawerOpen} sendOpenStatus={setIsDrawerOpen} />
       <AppBar
         position="static"
         sx={{ backgroundColor: '#fff', boxShadow: 'none' }}

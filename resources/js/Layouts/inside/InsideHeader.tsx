@@ -35,7 +35,6 @@ export default function InsideHeader({ activeTab = 'Bank' }: Props) {
 
   return (
     <>
-      <MainDrawer isOpen={isDrawerOpen} />
       <AppBar
         position="static"
         sx={{ backgroundColor: '#fff', boxShadow: 'none' }}
