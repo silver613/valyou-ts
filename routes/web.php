@@ -64,4 +64,12 @@ Route::get('/signup', function () {
   return Inertia::render('Signup');
 });
 
+Route::get('/wallet', function () {
+  return Inertia::render('Wallet');
+});
+
+Route::get('/message', function () {
+  return Inertia::render('Message');
+});
+
 require __DIR__.'/auth.php';

@@ -94,7 +94,11 @@ export default function GridItem() {
       <p className="color-primary">$ 1.4100</p>
       <p>$ 141,000,000</p>
       <p>0.0100%</p>
-      <Button variant="contained" sx={{ backgroundColor: '#000' }}>
+      <Button
+        variant="contained"
+        sx={{ backgroundColor: '#000' }}
+        href="/wallet"
+      >
         Invest in artist
       </Button>
     </Card>

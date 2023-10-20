@@ -109,3 +109,24 @@ body {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.bg-pink-gradient {
+  background: linear-gradient(129.49deg, #fd4680 28.13%, #fea75c 57.1%);
+}
+
+.bg-green-gradient {
+  background: linear-gradient(80.48deg, #00ffc2 7.18%, #00b8ba 97.46%);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0.1em; /* For Chrome and Safari */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent; /* For Chrome and Safari */
+}

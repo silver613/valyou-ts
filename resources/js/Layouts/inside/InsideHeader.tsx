@@ -72,6 +72,7 @@ export default function InsideHeader({ activeTab = 'Bank' }: Props) {
                     height: '30px',
                     marginRight: '10px',
                   }}
+                  href="/wallet"
                 >
                   <AccountBalanceWalletIcon fontSize="inherit" />
                 </IconButton>
@@ -82,6 +83,7 @@ export default function InsideHeader({ activeTab = 'Bank' }: Props) {
                     width: '30px',
                     height: '30px',
                   }}
+                  href="/message"
                 >
                   <MailOutlineIcon fontSize="inherit" />
                 </IconButton>
