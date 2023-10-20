@@ -3,13 +3,15 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import { Box, Button, IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import MainDrawer from '@/Layouts/main/Drawer';
-import { useState } from 'react';
+import MainDrawer from '@/Layouts/main/MainDrawer';
+import { useContext, useState } from 'react';
 import classNames from 'classnames';
 import HeaderComboBox from './components/HeaderComboBox';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
+import { AppContext } from '@/src/AppContextProvider';
+import InsideDrawer from './InsideDrawer';
 
 interface Props {
   activeTab: string;
@@ -31,10 +33,11 @@ const tabs = [
 ];
 
 export default function InsideHeader({ activeTab = 'Bank' }: Props) {
-  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+  const appContext = useContext(AppContext);
 
   return (
     <>
+      <InsideDrawer />
       <AppBar
         position="static"
         sx={{ backgroundColor: '#fff', boxShadow: 'none' }}
@@ -95,6 +98,7 @@ export default function InsideHeader({ activeTab = 'Bank' }: Props) {
                       width: '30px',
                       height: '30px',
                     }}
+                    onClick={() => appContext?.setAccountSwitcherStatus(true)}
                   >
                     <HeadphonesIcon fontSize="inherit" />
                   </IconButton>
@@ -109,7 +113,7 @@ export default function InsideHeader({ activeTab = 'Bank' }: Props) {
               <Box>
                 <IconButton
                   color="primary"
-                  onClick={() => setIsDrawerOpen(true)}
+                  onClick={() => appContext?.setInsideDrawerStatus(true)}
                 >
                   <MenuIcon />
                 </IconButton>

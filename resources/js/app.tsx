@@ -5,8 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Provider } from 'react-redux';
-import store from './src/store/store';
+import AppContextProvider from './src/AppContextProvider';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -17,6 +16,9 @@ const theme = createTheme({
     },
     secondary: {
       main: '#ff4680',
+    },
+    warning: {
+      main: '#fff',
     },
   },
   typography: {
@@ -35,11 +37,11 @@ createInertiaApp({
     const root = createRoot(el);
 
     root.render(
-      <Provider store={store}>
+      <AppContextProvider>
         <ThemeProvider theme={theme}>
           <App {...props} />
         </ThemeProvider>
-      </Provider>
+      </AppContextProvider>
     );
   },
   progress: {

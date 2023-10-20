@@ -2,13 +2,17 @@ import { Avatar, IconButton, TextField } from '@mui/material';
 import Close from '@mui/icons-material/Close';
 import CommentItem from './CommentItem';
 import SendIcon from '@mui/icons-material/Send';
+import { useContext } from 'react';
+import { AppContext } from '@/src/AppContextProvider';
 
 export default function CommentBox() {
+  const appContext = useContext(AppContext);
+
   return (
     <div className="box-shadow-thin w-[29%] p-2 h-[40vw] overflow-y-auto flex flex-col">
       <div className="flex justify-between items-center border-b">
         <p className="font-bold">Comments</p>
-        <IconButton>
+        <IconButton onClick={() => appContext?.setIsCommentBoxOpen(false)}>
           <Close />
         </IconButton>
       </div>

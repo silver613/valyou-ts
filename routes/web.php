@@ -72,4 +72,9 @@ Route::get('/message', function () {
   return Inertia::render('Message');
 });
 
+
+Route::get('/context', function () {
+  return Inertia::render('ContextSample');
+});
+
 require __DIR__.'/auth.php';

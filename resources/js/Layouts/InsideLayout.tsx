@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { Container } from '@mui/material';
 import InsideHeader from './inside/InsideHeader';
+import AccountSwitcher from './inside/components/AccountSwitcher';
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ export default function InsideLayout({
     <>
       <InsideHeader activeTab={activeTab} />
       <Container maxWidth="xl">{children}</Container>
+      <AccountSwitcher />
     </>
   );
 }

@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import { Box, Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import MainDrawer from '@/Layouts/main/Drawer';
+import MainDrawer from '@/Layouts/main/MainDrawer';
 import { useState } from 'react';
 
 export default function MainHeader() {

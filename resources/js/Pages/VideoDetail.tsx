@@ -8,6 +8,9 @@ import { ScrollContainer } from 'react-indiana-drag-scroll';
 import 'react-indiana-drag-scroll/dist/style.css';
 import AllVideos from '@/Components/video_detail/AllVideos';
 import CommentBox from '@/Components/video_detail/CommentBox';
+import { AppContext } from '@/src/AppContextProvider';
+import PromoteBox from '@/Components/video_detail/PromoteBox';
+import ValyouSongDrawer from '@/Components/video_detail/ValyouSongDrawer';
 
 const TabStyle: SxProps = {
   fontWeight: '600',
@@ -22,14 +25,18 @@ export default function VideoDetail() {
 
   const isMobile = useMediaQuery('(max-width:600px)');
 
+  const appContext = React.useContext(AppContext);
+
   return (
     <InsideLayout activeTab="Watch & Earn">
       <div className="flex justify-between my-4">
-        <LargeVideoCard
-          isCommentOpen={false}
-          shareCommentStatus={setIsCommentOpen}
-        />
-        {isCommentOpen ? <CommentBox /> : <AllVideos />}
+        <LargeVideoCard />
+
+        {!appContext?.isCommentBoxOpen && !appContext?.isPromoteBoxOpen && (
+          <AllVideos />
+        )}
+        {appContext?.isCommentBoxOpen && <CommentBox />}
+        {appContext?.isPromoteBoxOpen && <PromoteBox />}
       </div>
 
       <Card className="px-2 py-6 flex my-8">
@@ -110,6 +117,8 @@ export default function VideoDetail() {
       </ScrollContainer>
 
       {isMobile && <AllVideos />}
+
+      <ValyouSongDrawer />
     </InsideLayout>
   );
 }
