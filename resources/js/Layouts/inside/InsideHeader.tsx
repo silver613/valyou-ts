@@ -58,6 +58,7 @@ export default function InsideHeader({ activeTab = 'Bank' }: Props) {
                   href={item.link}
                   className={classNames('font-semibold mx-2', {
                     'color-primary': activeTab === item.title,
+                    'color-main': activeTab != item.title,
                   })}
                 >
                   {item.title}
@@ -103,10 +104,10 @@ export default function InsideHeader({ activeTab = 'Bank' }: Props) {
                     <HeadphonesIcon fontSize="inherit" />
                   </IconButton>
                   <Typography
-                    className="color-primary"
+                    className="color-primary capitalize"
                     sx={{ marginLeft: '15px' }}
                   >
-                    Investor
+                    {appContext?.activeAccountType}
                   </Typography>
                 </Box>
               </Box>
